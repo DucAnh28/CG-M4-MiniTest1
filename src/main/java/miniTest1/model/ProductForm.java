@@ -1,28 +1,23 @@
 package miniTest1.model;
 
+import org.springframework.web.multipart.MultipartFile;
 
-import javax.persistence.*;
-
-@Entity
-@Table(name = "products")
-public class Product {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class ProductForm {
     private String id;
     private String name;
     private double price;
-    private String img;
+    private MultipartFile img;
 
-    public Product() {
+    public ProductForm() {
     }
 
-    public Product(String name, double price, String img) {
+    public ProductForm(String id, String name, double price) {
+        this.id = id;
         this.name = name;
         this.price = price;
-        this.img = img;
     }
 
-    public Product(String id, String name, double price, String img) {
+    public ProductForm(String id, String name, double price, MultipartFile img) {
         this.id = id;
         this.name = name;
         this.price = price;
@@ -53,11 +48,11 @@ public class Product {
         this.price = price;
     }
 
-    public String getImg() {
+    public MultipartFile getImg() {
         return img;
     }
 
-    public void setImg(String img) {
+    public void setImg(MultipartFile img) {
         this.img = img;
     }
 }

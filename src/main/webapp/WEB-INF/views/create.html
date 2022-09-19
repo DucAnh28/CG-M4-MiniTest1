@@ -12,7 +12,7 @@
 <th:block th:if="${message}">
     <p th:text="${message}"></p>
 </th:block>
-<form action="/create" th:object="${newProduct}" method="post">
+<form action="/create" th:object="${newProduct}" method="post" novalidate="novalidate" enctype="multipart/form-data">
     <table>
         <tr>
             <td>Name</td>
@@ -24,7 +24,7 @@
         </tr>
         <tr>
             <td>Image</td>
-            <td><input type="text" th:field="*{img}"></td>
+            <td><input type="file" th:field="*{img}"></td>
         </tr>
         <tr>
             <td><input type="submit" value="Enter"></td>
